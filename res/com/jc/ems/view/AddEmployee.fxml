@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jc.ems.controller.AddEmployee">
+	<tabs>
+		<Tab fx:id="demographicsTab" text="Demographics">
+			<content>
+				<AnchorPane fx:id="demographicsPane" minHeight="0.0" minWidth="0.0" prefHeight="494.0" prefWidth="509.0">
+					<children>
+						<Label layoutX="341.0" layoutY="54.0" text="Sur Name:">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></Label>
+						<TextField fx:id="surName" layoutX="407.0" layoutY="51.0" prefHeight="25.0" prefWidth="219.0" promptText="Surname">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></TextField>
+						<Label layoutX="38.0" layoutY="159.0" text="Address:">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></Label>
+						<TextArea fx:id="address" layoutX="96.0" layoutY="128.0" prefHeight="76.0" prefWidth="527.0">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></TextArea>
+						<Label layoutX="10.0" layoutY="217.0" text="Date of Birth:">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></Label>
+						<DatePicker fx:id="dob" layoutX="97.0" layoutY="213.0" prefHeight="25.0" prefWidth="122.0" />
+						<Label layoutX="40.0" layoutY="254.0" text="Gender:">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></Label>
+						<ComboBox fx:id="gender" layoutX="96.0" layoutY="250.0" prefHeight="25.0" prefWidth="173.0" promptText="Select" />
+						<TextField fx:id="phone" layoutX="328.0" layoutY="254.0" prefHeight="25.0" prefWidth="172.0" promptText="9876543210" />
+						<Label layoutX="279.0" layoutY="256.0" text="Phone:">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></Label>
+						<Label layoutX="283.0" layoutY="219.0" text="Email:">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></Label>
+						<TextField fx:id="email" alignment="CENTER" layoutX="328.0" layoutY="216.0" prefHeight="25.0" prefWidth="294.0" promptText="emailaddress@domain.com" />
+						<Label layoutX="51.0" layoutY="291.0" text="Proof:">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></Label>
+						<ComboBox fx:id="proof" cache="true" layoutX="95.0" layoutY="287.0" prefHeight="25.0" prefWidth="181.0" promptText="Select" />
+						<TextField fx:id="proofValue" alignment="TOP_LEFT" layoutX="276.0" layoutY="286.0" prefHeight="25.0" prefWidth="349.0" promptText="Proof Value">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></TextField>
+						<ComboBox fx:id="maritalStatus" layoutX="95.0" layoutY="323.0" prefHeight="25.0" prefWidth="181.0" promptText="Select" />
+						<Label layoutX="3.0" layoutY="326.0" text="Marital Status:">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></Label>
+						<TextField fx:id="noOfChildren" alignment="CENTER" layoutX="401.0" layoutY="323.0" prefHeight="25.0" prefWidth="38.0" promptText="0">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></TextField>
+						<Label layoutX="298.0" layoutY="326.0" text="No Of Childrens:">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></Label>
+						<Button defaultButton="true" layoutX="570.0" layoutY="410.0" mnemonicParsing="false" onAction="#navigateEducation" prefHeight="25.0" prefWidth="54.0" text="Next">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></Button>
+						<Button cancelButton="true" layoutX="470.0" layoutY="410.0" mnemonicParsing="false" onAction="#navigateAfterLogin" text="Cancel">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></Button>
+						<TextField fx:id="givenName" layoutX="97.0" layoutY="51.0" prefHeight="25.0" prefWidth="233.0" promptText="Givenname">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></TextField>
+						<Label layoutX="17.0" layoutY="55.0" text="Given Name:">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></Label>
+						<Label layoutX="2.0" layoutY="88.0" text="Employee Title:">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></Label>
+						<TextField fx:id="empTitle" layoutX="97.0" layoutY="85.0" prefHeight="25.0" prefWidth="233.0" promptText="Employee Title">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></TextField>
+						<Label layoutX="341.0" layoutY="91.0" text="Date of Joining:">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></Label>
+						<DatePicker fx:id="doj" layoutX="439.0" layoutY="88.0" prefHeight="25.0" prefWidth="184.0" />
+						<Label layoutX="17.0" layoutY="18.0" text="Employee Id:">
+							<font>
+								<Font name="Calibri" size="14.0" />
+							</font>
+						</Label>
+						<TextField fx:id="employeeId" layoutX="98.0" layoutY="15.0" onInputMethodTextChanged="#employeeIdValidation" onMouseExited="#employeeIdValidation" prefHeight="25.0" prefWidth="111.0" promptText="Employee Id">
+							<font>
+								<Font name="Calibri" size="14.0" />
+							</font>
+						</TextField>
+						<CheckBox fx:id="disableEmployee" layoutX="16.0" layoutY="416.0" mnemonicParsing="false" text="Disable Employee">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></CheckBox>
+                  <ComboBox fx:id="department" layoutX="408.0" layoutY="15.0" prefHeight="25.0" prefWidth="217.0" promptText="Select" />
+                  <Label layoutX="324.0" layoutY="18.0" text="Department :">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                  </Label>
+					</children>
+				</AnchorPane>
+			</content>
+		</Tab>
+		<Tab fx:id="educationTab" text="Education">
+			<content>
+				<AnchorPane fx:id="educationPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+					<children>
+						<ComboBox fx:id="education1" layoutX="22.0" layoutY="21.0" prefHeight="25.0" prefWidth="185.0" promptText="Select or Enter" />
+						<TextField fx:id="qualification1" layoutX="207.0" layoutY="21.0" prefHeight="25.0" prefWidth="415.0" promptText="Qualifications and Alma Mater" />
+						<DatePicker fx:id="from1" layoutX="211.0" layoutY="62.0" prefHeight="25.0" prefWidth="179.0" />
+						<DatePicker fx:id="to1" layoutX="441.0" layoutY="62.0" prefHeight="25.0" prefWidth="178.0" />
+						<Label layoutX="171.0" layoutY="66.0" text="From:" />
+						<Label layoutX="414.0" layoutY="66.0" text="To:" />
+						<Separator layoutY="112.0" prefHeight="3.0" prefWidth="648.0" />
+						<Label layoutX="417.0" layoutY="177.0" text="To:" />
+						<Label layoutX="171.0" layoutY="177.0" text="From:" />
+						<DatePicker fx:id="to2" layoutX="445.0" layoutY="173.0" prefHeight="25.0" prefWidth="175.0" />
+						<DatePicker fx:id="from2" layoutX="211.0" layoutY="173.0" prefHeight="25.0" prefWidth="185.0" />
+						<TextField fx:id="qualification2" layoutX="207.0" layoutY="128.0" prefHeight="25.0" prefWidth="415.0" promptText="Qualifications and Alma Mater" />
+						<ComboBox fx:id="education2" layoutX="21.0" layoutY="129.0" prefHeight="25.0" prefWidth="186.0" promptText="Select or Enter" />
+						<Separator layoutY="213.0" prefHeight="4.0" prefWidth="648.0" />
+						<ComboBox fx:id="education3" layoutX="22.0" layoutY="236.0" prefHeight="25.0" prefWidth="186.0" promptText="Select or Enter" />
+						<TextField fx:id="qualification3" layoutX="208.0" layoutY="236.0" prefHeight="25.0" prefWidth="412.0" promptText="Qualifications and Alma Mater" />
+						<DatePicker fx:id="from3" layoutX="215.0" layoutY="275.0" prefHeight="25.0" prefWidth="185.0" />
+						<Label layoutX="175.0" layoutY="276.0" text="From:" />
+						<DatePicker fx:id="to3" layoutX="445.0" layoutY="274.0" prefHeight="25.0" prefWidth="172.0" />
+						<Label layoutX="418.0" layoutY="277.0" text="To:" />
+						<Button cancelButton="true" layoutX="470.0" layoutY="410.0" mnemonicParsing="false" onAction="#navigateAfterLogin" text="Cancel">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></Button>
+						<Button defaultButton="true" layoutX="570.0" layoutY="410.0" mnemonicParsing="false" onAction="#navigateMemos" prefHeight="25.0" prefWidth="54.0" text="Next">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></Button>
+					</children>
+				</AnchorPane>
+			</content>
+		</Tab>
+		<Tab fx:id="memosTab" text="Memos">
+			<content>
+				<AnchorPane fx:id="memosPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+					<children>
+						<Label layoutX="32.0" layoutY="21.0" text="MEMO 1 :" />
+						<Label layoutX="29.0" layoutY="126.0" text="MEMO 2 :" />
+						<Label layoutX="30.0" layoutY="231.0" text="MEMO 3 :" />
+						<TextArea fx:id="memo1" layoutX="96.0" layoutY="18.0" prefHeight="100.0" prefWidth="516.0" />
+						<TextArea fx:id="memo2" layoutX="94.0" layoutY="126.0" prefHeight="95.0" prefWidth="518.0" />
+						<TextArea fx:id="memo3" layoutX="94.0" layoutY="230.0" prefHeight="84.0" prefWidth="517.0" />
+						<Button fx:id="addMemos" defaultButton="true" layoutX="570.0" layoutY="410.0" mnemonicParsing="false" onAction="#addEmployees" prefHeight="25.0" prefWidth="54.0" text="Add" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></Button>
+						<Button cancelButton="true" layoutX="470.0" layoutY="410.0" mnemonicParsing="false" onAction="#navigateAfterLogin" text="Cancel">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></Button>
+					</children>
+				</AnchorPane>
+			</content>
+		</Tab>
+		<Tab disable="true" text="Leave">
+			<content>
+				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+					<children>
+						<Button defaultButton="true" layoutX="570.0" layoutY="410.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="54.0" text="Add">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></Button>
+						<Button cancelButton="true" layoutX="470.0" layoutY="410.0" mnemonicParsing="false" onAction="#navigateAfterLogin" text="Cancel">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></Button>
+						<DatePicker layoutX="378.0" layoutY="54.0" prefHeight="29.0" prefWidth="156.0" />
+						<Text fx:id="currentMonth" fill="#00000090" layoutX="204.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="...">
+							<font>
+								<Font name="Calibri" size="14.0" />
+							</font>
+						</Text>
+						<Label layoutX="102.0" layoutY="30.0" text="Current Month :">
+							<font>
+								<Font name="Calibri" size="14.0" />
+							</font>
+						</Label>
+						<TableView layoutX="377.0" layoutY="95.0" prefHeight="302.0" prefWidth="246.0" />
+						<CheckBox layoutX="557.0" layoutY="59.0" mnemonicParsing="false" text="Unpaid">
+							<font>
+								<Font name="Calibri" size="14.0" />
+							</font>
+						</CheckBox>
+						<Label layoutX="19.0" layoutY="96.0" text="Current Month Unpaid Leave :">
+							<font>
+								<Font name="Calibri" size="14.0" />
+							</font>
+						</Label>
+						<Text fill="#00000090" layoutX="202.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+							<font>
+								<Font name="Calibri" size="14.0" />
+							</font>
+						</Text>
+						<Text fill="#00000090" layoutX="202.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+							<font>
+								<Font name="Calibri" size="14.0" />
+							</font>
+						</Text>
+						<Label layoutX="36.0" layoutY="124.0" text="Current Month Paid Leave :">
+							<font>
+								<Font name="Calibri" size="14.0" />
+							</font>
+						</Label>
+						<Label layoutX="25.0" layoutY="54.0" text="Allowed Leaves for Month :" textAlignment="RIGHT">
+							<font>
+								<Font size="14.0" />
+							</font>
+						</Label>
+                  <Text fill="#00000090" layoutX="203.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                  </Text>
+					</children>
+				</AnchorPane>
+			</content>
+		</Tab>
+		<Tab disable="true" text="Payroll">
+			<content>
+				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+					<children>
+						<Label layoutX="25.0" layoutY="52.0" text="No of Working Days :">
+							<font>
+								<Font name="Calibri" size="14.0" />
+							</font>
+						</Label>
+						<Label layoutX="63.0" layoutY="85.0" text="No of Payday :">
+							<font>
+								<Font name="Calibri" size="14.0" />
+							</font>
+						</Label>
+						<Label layoutX="51.0" layoutY="154.0" text="Per Day Wages :">
+							<font>
+								<Font name="Calibri" size="14.0" />
+							</font>
+						</Label>
+						<Label layoutX="11.0" layoutY="260.0" text="Current Month Salary :">
+							<font>
+								<Font name="Calibri" size="14.0" />
+							</font>
+						</Label>
+						<TextField fx:id="perDayWages" layoutX="153.0" layoutY="151.0" prefHeight="25.0" prefWidth="67.0" promptText="00000.00" />
+						<Text fx:id="currentMonthSalary" layoutX="152.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00" wrappingWidth="130.0078125">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></Text>
+						<TextField fx:id="pfAccountNo" layoutX="393.0" layoutY="16.0" prefHeight="25.0" prefWidth="231.0">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></TextField>
+						<Label layoutX="294.0" layoutY="20.0" text="PF Account No:">
+							<font>
+								<Font name="Calibri" size="14.0" />
+							</font>
+						</Label>
+						<Button defaultButton="true" layoutX="570.0" layoutY="410.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="54.0" text="Add" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></Button>
+						<Button cancelButton="true" layoutX="470.0" layoutY="410.0" mnemonicParsing="false" onAction="#navigateAfterLogin" text="Cancel" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></Button>
+						<Label layoutX="53.0" layoutY="15.0" text="Current Month :">
+							<font>
+								<Font name="Calibri" size="14.0" />
+							</font>
+						</Label>
+						<Text fx:id="currentMonth" fill="#00000090" layoutX="157.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="...">
+							<font>
+								<Font name="Calibri" size="14.0" />
+							</font>
+						</Text>
+						<Label layoutX="46.0" layoutY="118.0" text="No of UnPayday :">
+							<font>
+								<Font name="Calibri" size="14.0" />
+							</font>
+						</Label>
+						<Text fx:id="noOfWorkingDays" fill="#00000090" layoutX="155.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+							<font>
+								<Font name="Calibri Bold" size="14.0" />
+							</font>
+						</Text>
+						<Text fx:id="noOfPayday" fill="#00000090" layoutX="155.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+							<font>
+								<Font name="Calibri Bold" size="14.0" />
+							</font>
+						</Text>
+						<Text fx:id="noOfUnPayday" fill="#00000090" layoutX="155.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+							<font>
+								<Font name="Calibri Bold" size="14.0" />
+							</font>
+						</Text>
+                  <Button fx:id="generatePayroll" graphicTextGap="6.0" layoutX="15.0" layoutY="410.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="140.0" text="₹  Generate Payroll" textAlignment="CENTER">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                  </Button>
+					</children>
+				</AnchorPane>
+			</content>
+		</Tab>
+	</tabs>
+</TabPane>

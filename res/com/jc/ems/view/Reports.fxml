@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jc.ems.controller.Reports">
+   <children>
+      <Accordion prefHeight="441.0" prefWidth="640.0">
+        <panes>
+          <TitledPane animated="false" text="Current Month Payroll Report">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="currentMonthPayrollReport" prefHeight="314.0" prefWidth="640.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+          </TitledPane>
+          <TitledPane animated="false" prefHeight="206.0" prefWidth="410.0" text="Current Month Paid Leave Report">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="currentMonthPaidLeave" prefHeight="307.0" prefWidth="640.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+          </TitledPane>
+          <TitledPane animated="false" text="Current Month Unpaid Leave Report">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="currentMonthUnpaidLeave" layoutX="-1.0" prefHeight="317.0" prefWidth="640.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+          </TitledPane>
+            <TitledPane animated="false" text="List of Active Employee">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="totalActiveEmployee" layoutX="-1.0" prefHeight="306.0" prefWidth="640.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </TitledPane>
+            <TitledPane animated="false" text="List of Inactive Employee">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="totalInactiveEmployee" layoutX="-1.0" prefHeight="305.0" prefWidth="640.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </TitledPane>
+        </panes>
+      </Accordion>
+      <Button layoutX="574.0" layoutY="448.0" mnemonicParsing="false" onAction="#navigateAfterLogin" text="Cancel" />
+   </children>
+</Pane>

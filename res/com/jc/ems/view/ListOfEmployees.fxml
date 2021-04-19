@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jc.ems.controller.ListOfEmployees">
+   <children>
+      <TableView fx:id="listEmployee" prefHeight="426.0" prefWidth="640.0" />
+      <Button layoutX="26.0" layoutY="438.0" mnemonicParsing="false" onAction="#navigateAfterLogin" text="Cancel">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <font>
+            <Font name="Calibri" size="14.0" />
+         </font></Button>
+      <TextField fx:id="searchEmployeeId" layoutX="423.0" layoutY="439.0" prefHeight="25.0" prefWidth="163.0" promptText="Search Employee ID">
+         <font>
+            <Font name="Calibri" size="14.0" />
+         </font></TextField>
+      <ImageView fx:id="searchIcon" fitHeight="31.0" fitWidth="34.0" layoutX="598.0" layoutY="437.0" onKeyPressed="#navigateToEmployee" onMouseClicked="#navigateToEmployee" pickOnBounds="true">
+         <image>
+            <Image url="@../../ems/images/search.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+</Pane>

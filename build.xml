@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="EMS-JC" default="do-deploy" basedir="."
+	xmlns:fx="javafx:com.sun.javafx.tools.ant">
+	<echo>"Building Employee Management System application with access
+		database......"</echo>
+	<delete dir="install" />
+	<target name="init-fx-tasks">
+		<path id="fxant">
+			<filelist>
+				<file name="${java.home}\..\lib\ant-javafx.jar" />
+				<file name="${java.home}\lib\jfxrt.jar" />
+			</filelist>
+		</path>
+		<taskdef resource="com/sun/javafx/tools/ant/antlib.xml"
+			uri="javafx:com.sun.javafx.tools.ant" classpathref="fxant" />
+	</target>
+	<target name="setup-staging-area">
+		<mkdir dir="externalLibs" />
+		<copy todir="externalLibs">
+			<fileset dir="${basedir}\libs">
+				<filename name="commons-logging-1.1.1.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="${basedir}\libs">
+				<filename name="jackcess-2.1.6.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="${basedir}\libs">
+				<filename name="hsqldb-2.3.1.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="${basedir}\libs">
+				<filename name="commons-lang-2.6.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="${basedir}\libs">
+				<filename name="ucanaccess-4.0.1.jar" />
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="${basedir}\libs">
+				<filename name="Database.mdb" />
+			</fileset>
+		</copy>
+		<mkdir dir="project" />
+		<copy todir="project">
+			<fileset dir="${basedir}">
+				<include name="res/**" />
+			</fileset>
+		</copy>
+		<copy todir="project">
+			<fileset dir="${basedir}">
+				<include name="src/**" />
+			</fileset>
+		</copy>
+		<mkdir dir="projectRefs" />
+	</target>
+	<target name='do-compile'>
+		<mkdir dir="build/src" />
+		<mkdir dir="build/libs" />
+		<mkdir dir="build/classes" />
+		<copy todir="build/libs">
+			<fileset dir="externalLibs">
+				<include name="jackcess-2.1.6.jar" />
+				<include name="commons-logging-1.1.1.jar" />
+				<include name="hsqldb-2.3.1.jar" />
+				<include name="commons-lang-2.6.jar" />
+				<include name="ucanaccess-4.0.1.jar" />
+			</fileset>
+		</copy>
+		<copy todir="build/src">
+			<fileset dir="project/res">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+		<copy todir="build/src">
+			<fileset dir="project/src">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+		<javac includeantruntime="false" source="1.8" target="1.8"
+			srcdir="build/src" destdir="build/classes" encoding="Cp1252">
+			<classpath>
+				<fileset dir="build/libs">
+					<include name="*" />
+				</fileset>
+			</classpath>
+		</javac>
+		<copy todir="build/classes">
+			<fileset dir="project/res">
+				<exclude name="**/*.java" />
+			</fileset>
+			<fileset dir="project/src">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>
+	<target name="do-deploy"
+		depends="setup-staging-area, do-compile, init-fx-tasks">
+		<mkdir dir="dist" />
+		<mkdir dir="dist/libs" />
+		<copy todir="dist/libs">
+			<fileset dir="externalLibs">
+				<include name="*" />
+			</fileset>
+		</copy>
+		<jar destfile="dist/libs/EMS-JC-preloader.jar">
+			<fileset dir="build/classes">
+				<include name=".class" />
+			</fileset>
+		</jar>
+		<fx:resources id="appRes">
+			<fx:fileset dir="dist" requiredFor="preloader"
+				includes="EMS-JC-preloader.jar" />
+			<fx:fileset dir="dist" includes="EMS-JC.jar" />
+			<fx:fileset dir="dist" includes="libs/*" />
+		</fx:resources>
+		<fx:application id="fxApplication"
+			name="Employee Management System" mainClass="com.jc.ems.App"
+			preloaderClass="" toolkit="fx" />
+		<mkdir dir="build/classes/META-INF" />
+		<fx:jar destfile="dist/EMS-JC.jar">
+			<fx:application refid="fxApplication" />
+			<fileset dir="build/classes">
+				<exclude name=".class" />
+			</fileset>
+			<fx:resources refid="appRes" />
+
+			<manifest>
+				<attribute name="Implementation-Vendor" value="JananiC" />
+				<attribute name="Implementation-Title"
+					value="Employee Management System" />
+				<attribute name="Implementation-Version" value="0.0.1" />
+				<attribute name="JavaFX-Feature-Proxy" value="None" />
+			</manifest>
+		</fx:jar>
+		<mkdir dir="deploy" />
+		<fx:deploy embedJNLP="true" extension="false"
+			includeDT="false" offlineAllowed="true" outdir="${basedir}/install"
+			outfile="EMS-JC" nativeBundles="all" updatemode="background">
+			<fx:platform basedir="${java.home}" />
+			<fx:info title="EMS-JC" vendor="JananiC">
+				<fx:icon href="${basedir}/res/com/jc/images/icon.ico" />
+				<fx:splash href="" mode="any" />
+			</fx:info>
+			<fx:application refId="fxApplication" />
+			<fx:resources refid="appRes" />
+		</fx:deploy>
+		<delete dir="build" />
+		<delete dir="externalLibs" />
+		<delete dir="project" />
+		<delete dir="projectRefs" />
+		<delete dir="dist" />
+		<delete dir="deploy" />
+		<delete dir="install/libs" />
+		<delete file="install/EMS-JC.html" />
+		<delete file="install/EMS-JC.jar" />
+		<delete file="install/EMS-JC.jnlp" />
+		<delete dir="install/bundles/libs" />
+		<delete file="install/bundles/EMS-JC.html" />
+		<delete file="install/bundles/EMS-JC.jar" />
+		<delete file="install/bundles/EMS-JC.jnlp" />
+	</target>
+</project>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jc.ems.controller.AfterLogin">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="158.0" layoutX="70.0" layoutY="83.0" onMouseClicked="#navigateAddEmployee" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../ems/images/add.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="124.0" fitWidth="125.0" layoutX="427.0" layoutY="96.0" onMouseClicked="#navigateListEmployee" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../ems/images/list.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="105.0" layoutY="234.0" text="Add Employee">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="437.0" layoutY="234.0" text="List of Employees">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="logininfo" layoutX="442.0" layoutY="25.0" text="Logged In User:">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="261.0" layoutY="273.0" onMouseClicked="#navigateReports" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <image>
+            <Image url="@../../ems/images/report.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="268.0" layoutY="430.0" text="Employee Report">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

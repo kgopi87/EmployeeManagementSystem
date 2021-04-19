@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jc.ems.controller.Login">
+   <center>
+      <Pane fx:id="loginScreen" prefHeight="480.0" prefWidth="640.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="184.0" layoutY="109.0" text="Welcome To EMS">
+               <font>
+                  <Font name="Calibri Bold" size="36.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="76.0" fitWidth="82.0" layoutX="270.0" layoutY="15.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@../../ems/images/logo.png" />
+               </image>
+               <effect>
+                  <Lighting bumpInput="$null">
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </ImageView>
+            <Label layoutX="180.0" layoutY="182.0" text="Username:">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="userName" layoutX="275.0" layoutY="178.0" prefHeight="30.0" prefWidth="195.0" promptText="enter your username">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="185.0" layoutY="222.0" text="Password:">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="password" layoutX="275.0" layoutY="218.0" prefHeight="30.0" prefWidth="195.0" promptText="enter your password">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </PasswordField>
+            <Button fx:id="loginBtn" defaultButton="true" layoutX="417.0" layoutY="280.0" mnemonicParsing="false" onAction="#loginValidate" text="Login">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Text layoutX="267.0" layoutY="451.0" strokeType="OUTSIDE" strokeWidth="0.0" text="© Copyrights to JC" wrappingWidth="106.984375">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Text>
+         </children>
+         <effect>
+            <Glow />
+         </effect>
+      </Pane>
+   </center>
+</BorderPane>
