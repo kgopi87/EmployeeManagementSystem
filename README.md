@@ -1,0 +1,2 @@
+# EmployeeManagementSystem
+Employee Management System is a distributed application, developed to maintain the details of employees working suitable for any small industries or business. It maintains the information about the personal details of their employees, also the details about the payroll system and leave management system. The applications developed using opensource Java and low-cost access database.
